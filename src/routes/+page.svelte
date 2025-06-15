@@ -6,7 +6,7 @@
 
 	const today = new Date();
 	today.setHours(9);
-	const notes: Note[] = $state([
+	let notes: Note[] = $state([
 		{
 			text: '<em>When a man has a grievance, he feels drawn to those who will hear him patiently and symphatise</em>',
 			highlight: 'pink',
@@ -26,6 +26,15 @@
 			open: true
 		}
 	]);
+
+	$effect(() => {
+		const savedNotes = localStorage.getItem('notes');
+		savedNotes && (notes = JSON.parse(savedNotes) as Note[]);
+	});
+
+	$effect(() => {
+		localStorage.setItem('notes', JSON.stringify(notes));
+	});
 </script>
 
 <div class="app">
