@@ -32,7 +32,23 @@
 	<main class="notes-list">
 		<h1>Sticky notes</h1>
 		{#each notes as note}
-			<div class="notes-list--note" class:open={note.open} data-color={note.highlight}>
+			<div
+				role="button"
+				aria-label="Open note"
+				tabindex="0"
+				onkeydown={(event) => {
+					if (['Enter', ' '].includes(event.key)) {
+						event.preventDefault();
+						note.open = true;
+					}
+				}}
+				ondblclick={() => {
+					note.open = true;
+				}}
+				class="notes-list--note"
+				class:open={note.open}
+				data-color={note.highlight}
+			>
 				<LastModified dateString={note.lastModified} />
 				<div>{@html note.text}</div>
 			</div>
