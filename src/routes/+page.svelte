@@ -2,6 +2,7 @@
 	import '../app.css';
 
 	import LastModified from './LastModified.svelte';
+	import Window from './Window.svelte';
 
 	const today = new Date();
 	today.setHours(9);
@@ -36,3 +37,7 @@
 		</div>
 	{/each}
 </main>
+
+{#each notes as note}
+	<Window bind:open={note.open} bind:text={note.text} highlight={note.highlight} />
+{/each}
