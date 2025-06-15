@@ -28,16 +28,18 @@
 	]);
 </script>
 
-<main class="notes-list">
-	<h1>Sticky notes</h1>
-	{#each notes as note}
-		<div class="notes-list--note" class:open={note.open} data-color={note.highlight}>
-			<LastModified dateString={note.lastModified} />
-			<div>{@html note.text}</div>
-		</div>
-	{/each}
-</main>
+<div class="app">
+	<main class="notes-list">
+		<h1>Sticky notes</h1>
+		{#each notes as note}
+			<div class="notes-list--note" class:open={note.open} data-color={note.highlight}>
+				<LastModified dateString={note.lastModified} />
+				<div>{@html note.text}</div>
+			</div>
+		{/each}
+	</main>
 
-{#each notes as note}
-	<Window bind:open={note.open} bind:text={note.text} highlight={note.highlight} />
-{/each}
+	{#each notes as note}
+		<Window bind:open={note.open} bind:text={note.text} highlight={note.highlight} />
+	{/each}
+</div>

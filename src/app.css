@@ -88,11 +88,71 @@ body {
 	font-family: system-ui;
 	color: var(--color-text-0);
 	background: oklch(from var(--color-surface-0) calc(l * 0.8) c h);
+	min-block-size: 100svb;
+}
+
+.app {
+	--notes-list-inline-size: 400px;
+	--notes-list-block-size: 600px;
+	--note-inline-size: 280px;
+	--note-block-size: 260px;
+	max-inline-size: 1200px;
+	margin-inline: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+	padding: 40px 20px;
+	gap: 10px;
+
+	.notes-list {
+		grid-column: 1;
+		grid-row: 1 / 4;
+	}
+
+	.note {
+		grid-column: 2;
+
+		&:nth-of-type(1) {
+			grid-row: 1;
+			justify-self: start;
+		}
+
+		&:nth-of-type(2) {
+			justify-self: end;
+			grid-row: 2;
+		}
+
+		&:nth-of-type(3) {
+			grid-row: 3;
+		}
+	}
+
+	@media (max-width: 850px) {
+		grid-template-columns: 1fr;
+	}
+
+	@media (max-width: 750px) {
+		display: flex;
+		flex-direction: column;
+
+		.notes-list {
+			block-size: unset;
+			padding-block-end: 100px;
+			inline-size: 100%;
+			max-inline-size: var(--notes-list-inline-size);
+		}
+
+		.note {
+			inline-size: 100%;
+			max-inline-size: var(--note-inline-size);
+		}
+	}
 }
 
 .notes-list {
-	inline-size: 400px;
-	block-size: 600px;
+	inline-size: var(--notes-list-inline-size);
+	block-size: var(--notes-list-block-size);
 	--button-size: 38px;
 	--border-radius-window: 10px;
 	--border-radius-article: 2px;
@@ -213,8 +273,8 @@ body {
 }
 
 .note {
-	inline-size: 320px;
-	block-size: 320px;
+	inline-size: var(--note-inline-size);
+	block-size: var(--note-block-size);
 	--button-size-1: 28px;
 	--button-size-2: 32px;
 	--border-radius-ui: 10px;
@@ -284,7 +344,12 @@ body {
 	}
 
 	&[hidden] {
-        display: none;
+		visibility: hidden;
+		opacity: 0;
+
+		@media (max-width: 750px) {
+			display: none;
+		}
 	}
 }
 
