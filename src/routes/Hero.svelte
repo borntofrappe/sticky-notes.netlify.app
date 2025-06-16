@@ -10,7 +10,9 @@
 		</div>
 		<p>Take notes in cute little frames.</p>
 		<div class="row">
-			<a class="button primary" href="/sticky-notes.exe" download="sticky-notes.exe">Download for Windows</a>
+			<a class="button primary" href="/sticky-notes.exe" download="sticky-notes.exe"
+				>Download for Windows</a
+			>
 			<a class="button" href="#app">Try a short time</a>
 		</div>
 	</div>
@@ -20,16 +22,6 @@
 	.layout {
 		padding-block: 25svb;
 		background: linear-gradient(var(--color-surface-0), var(--color-surface--1));
-	}
-
-	.center {
-		max-inline-size: var(--size-content-1);
-		margin-inline: auto;
-		padding-inline: var(--whitespace-4);
-
-		& > * + * {
-			margin-block-start: var(--whitespace-5);
-		}
 	}
 
 	figure {
