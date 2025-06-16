@@ -37,7 +37,7 @@
 	});
 </script>
 
-<div class="app">
+<article class="app" id="app">
 	<main class="notes-list">
 		<h1>Sticky notes</h1>
 		{#each notes as note}
@@ -67,4 +67,4 @@
 	{#each notes as note}
 		<Window bind:open={note.open} bind:text={note.text} highlight={note.highlight} />
 	{/each}
-</div>
+</article>

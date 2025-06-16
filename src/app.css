@@ -46,6 +46,22 @@
 
 	--border-radius-hint: 2px;
 	--padding-hint: 6px;
+
+	--color-surface--1: #171717;
+	--color-text-link: #53cdff;
+	--color-text-primary: #0c0b06;
+	--color-surface-primary: #60cdff;
+
+	--size-content-1: 50rem;
+	--whitespace-1: 5px;
+	--whitespace-2: 10px;
+	--whitespace-3: 15px;
+	--whitespace-4: 20px;
+	--whitespace-5: 30px;
+
+	--border-radius-1: 4px;
+	--border-radius-2: 8px;
+	--border-radius-3: 10px;
 }
 
 * {
@@ -84,11 +100,40 @@
 	}
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
 body {
 	font-family: system-ui;
 	color: var(--color-text-0);
-	background: oklch(from var(--color-surface-0) calc(l * 0.8) c h);
+	background: var(--color-surface--1);
 	min-block-size: 100svb;
+}
+
+.button {
+	text-decoration: none;
+	padding: var(--whitespace-2) var(--whitespace-5);
+	color: var(--color-text-0);
+	background: var(--color-surface-1);
+	border-radius: var(--border-radius-1);
+	border: none;
+
+	&.primary {
+		color: var(--color-text-primary);
+		background: var(--color-surface-primary);
+	}
+}
+
+.link {
+	color: var(--color-text-link);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .app {
