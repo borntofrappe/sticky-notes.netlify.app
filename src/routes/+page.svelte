@@ -2,6 +2,7 @@
 	import '../app.css';
 
 	import App from './App.svelte';
+	import Features from './Features.svelte';
 	import Hero from './Hero.svelte';
 </script>
 
@@ -11,3 +12,4 @@
 
 <Hero />
 <App />
+<Features />
