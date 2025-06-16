@@ -1,11 +1,15 @@
+<script lang="ts">
+	import site from "$lib/site";
+</script>
+
 <div class="layout">
 	<div class="center">
 		<div class="grid">
 			<figure>
 				<img src="/icon.svg" alt="" width="52" height="52" />
 			</figure>
-			<h1>Sticky notes</h1>
-			<p>Gabriele Corti</p>
+			<h1>{site.title}</h1>
+			<p>{site.author}</p>
 			<p>Utilities & tools</p>
 		</div>
 		<p>Take notes in cute little frames.</p>

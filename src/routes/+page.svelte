@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import site from '$lib/site';
 
 	import App from './App.svelte';
 	import Features from './Features.svelte';
@@ -7,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Sticky Notes</title>
+	<title>{site.title}</title>
 </svelte:head>
 
 <Hero />
