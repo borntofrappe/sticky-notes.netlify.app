@@ -1,14 +1,17 @@
+<script>
+	import site from '$lib/site';
+</script>
+
 <div class="region">
 	<div class="center">
 		<div class="panel">
-			<h2>Sticky notes 0.1.1</h2>
+			<h2>Sticky notes {site.appVersion}</h2>
+
+			<p>Take notes - Add, edit, delete notes for quick reminders and vital thoughts.</p>
 
 			<p>
-				Take notes - Add, edit, delete notes for quick reminders and vital thoughts.
-			</p>
-
-			<p>
-				Edit text - Bolden, italicize, underline or strike through a few words. Organize lines in compact list.
+				Edit text - Bolden, italicize, underline or strike through a few words. Organize lines in
+				compact list.
 			</p>
 
 			<p>Pick a flavor - Style windows with distinct, fresh new colors.</p>
@@ -23,5 +26,4 @@
 </div>
 
 <style>
-	
 </style>
