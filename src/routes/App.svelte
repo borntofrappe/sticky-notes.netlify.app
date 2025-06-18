@@ -65,6 +65,6 @@
 	</main>
 
 	{#each notes as note}
-		<Window bind:open={note.open} bind:text={note.text} highlight={note.highlight} />
+		<Window bind:open={note.open} bind:text={note.text} bind:highlight={note.highlight} />
 	{/each}
 </article>
