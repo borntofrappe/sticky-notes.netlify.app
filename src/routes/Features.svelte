@@ -1,11 +1,7 @@
-<script>
-	import site from '$lib/site';
-</script>
-
 <div class="region">
 	<div class="center">
 		<div class="panel">
-			<h2>Sticky notes {site.appVersion}</h2>
+			<h2>Sticky notes 0.1</h2>
 
 			<p>Take notes - Add, edit, delete notes for quick reminders and vital thoughts.</p>
 
@@ -24,6 +20,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-</style>
